@@ -6,6 +6,7 @@ sys.stdin = open("input.txt", "r")
 sys.stdout = open("output.txt", "w")
 
 # 1. Check if given num is prime or not by most efficient method in worst case scenario.
+
 # def CheckPrime(n, cnt):
 #     if n == 2:
 #         cnt += 1
@@ -29,20 +30,22 @@ sys.stdout = open("output.txt", "w")
 #     CheckPrime(n, cnt)
 
 
-# 3. Generate primes between 2 given numbers by bruteForce - Need 0.8sec & 22M  
+# 2. Generate primes between 2 given numbers by bruteForce - Need 0.8sec & 22M  
 for _ in range(int(input())):
     m, n = map(int, input().split())
     primes = {}
     for i in range(2, int(sqrt(n)+1)):
         for j in range(max(m//i, 2), (n//i)+1):
-            primes[i * j] = 1                   #Dictionary of non-prime numbers
+            primes[i * j] = 1                   # Dictionary of non-prime numbers
 
     for i in range(max(m, 2), n+1):
-        if i not in primes:                     #Produce primes by checking non-primes
+        if i not in primes:                     # Produce primes by checking non-primes
             print(i) 
+        
 
 
-# 3. Generate primes between 2 given numbers by efficient logic - Exceeds time limit & 12M 
+# 3. Generate primes between 2 given numbers by efficient logic - time limit exceeded & 12M 
+
 # def GeneratePrime(a, b):
 #     l = []
 #     for i in range(a, b+1):
