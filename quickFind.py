@@ -1,4 +1,5 @@
 # The eager approach
+# Time Complexity - O(n*n) too slow !
 
 import sys
 
@@ -6,31 +7,34 @@ import sys
 # sys.stdout = open("output.txt", "w")
 
 class quickFindUF:
-    id = []
+    
     def __init__(self, n):
-        for i in range(n):
-            id[i] = i
+        self.id = list(range(n))            
     
     def connected(self, p, q):
-        return id[p] == id[q]
+        return self.id[p] == self.id[q]
 
     def union(self, p, q):
-        pid, qid = id[p], id[q]
-        for i in range(len(id)):
-            if (id[i] == pid): id[i] = qid
+        pid, qid = self.id[p], self.id[q]
+        for i in range(len(self.id)):
+            if (self.id[i] == pid): self.id[i] = qid
 
 
 if __name__ == "__main__":
-    g = Graph(10)
-    g.connected(4, 3)
-    g.connected(6, 5)
-    g.connected(3, 8)
-    g.connected(9, 4)
-    g.connected(2, 1)
-    g.connected(8, 9)
-    g.connected(5, 0)
-    g.connected(7, 2)
-    g.connected(1, 0)
-    g.connected(6, 1)
+    g = quickFindUF(6)
+    cc = g.connected(4, 3)
+    if not cc: g.union(4, 3)
 
+    cc = g.connected(2, 5)
+    if not cc: g.union(2, 5)
     
+    cc = g.connected(5, 0)
+    if not cc: g.union(5, 0)
+   
+    cc = g.connected(1, 0)
+    if not cc: g.union(1, 0)
+
+
+# before:  0 1 2    after:  0-1-2 
+#                               |     
+#          3 4 5            3-4 5
