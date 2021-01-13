@@ -1,4 +1,4 @@
-# Find out the connected components
+# Finding out the connected components
 # I'm using graph here !
 
 import sys
