@@ -1,20 +1,10 @@
 '''
+Author -> Al-Imran Rony (2015331531)
 Graphics Assignment 03
 Bresenham's circle generation algorithm
 ''' 
 
 from PIL import Image, ImageDraw
-
-
-# def drawCircle(xc, yc, x, y):
-#     putpixel(xc+x, yc+y, RED)
-#     putpixel(xc-x, yc+y, RED) 
-#     putpixel(xc+x, yc-y, RED) 
-#     putpixel(xc-x, yc-y, RED) 
-#     putpixel(xc+y, yc+x, RED) 
-#     putpixel(xc-y, yc+x, RED) 
-#     putpixel(xc+y, yc-x, RED) 
-#     putpixel(xc-y, yc-x, RED)
 
 
 def bresenhamCircle(radius):

@@ -1,4 +1,5 @@
 '''
+Author -> Al-Imran Rony (2015331531)
 Graphics Assignment 01
 Bresenham's line generation algorithm 
 

@@ -1,4 +1,5 @@
 '''
+Author -> Al-Imran Rony (2015331531)
 Graphics algorithm 02
 Digital Differential Analyser (DDA) line drawing algorithm 
 '''
